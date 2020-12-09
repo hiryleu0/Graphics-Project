@@ -46,29 +46,51 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AllPicturesForm.cs">
+    <Compile Include="CMYK\AllPicturesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AllPicturesForm.Designer.cs">
+    <Compile Include="CMYK\AllPicturesForm.Designer.cs">
       <DependentUpon>AllPicturesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Curve.cs" />
-    <Compile Include="DirectBitmap.cs" />
-    <Compile Include="EndPoint.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="CMYK\Curve.cs" />
+    <Compile Include="AdditionalClasses\DirectBitmap.cs" />
+    <Compile Include="CMYK\EndPoint.cs" />
+    <Compile Include="CMYK\CMYKForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="CMYK\CMYKForm.Designer.cs">
+      <DependentUpon>CMYKForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Point.cs" />
+    <Compile Include="CMYK\Point.cs" />
+    <Compile Include="HSV\HSVFilter.cs" />
+    <Compile Include="HSV\HSVForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSV\HSVForm.Designer.cs">
+      <DependentUpon>HSVForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSV\IFilter.cs" />
+    <Compile Include="HSV\LabFilter.cs" />
+    <Compile Include="HSV\YCbCrFilter.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AllPicturesForm.resx">
+    <EmbeddedResource Include="CMYK\AllPicturesForm.resx">
       <DependentUpon>AllPicturesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="CMYK\CMYKForm.resx">
+      <DependentUpon>CMYKForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSV\HSVForm.resx">
+      <DependentUpon>HSVForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -92,5 +114,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

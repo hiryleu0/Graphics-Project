@@ -12,10 +12,10 @@ namespace Projekt3
 {
     public partial class AllPicturesForm : Form
     {
-        private readonly Form1 mainForm;
+        private readonly CMYKForm mainForm;
         private readonly DirectBitmap cyjanDirectBitmap, magentaDirectBitmap, yellowDirectBitmap, blackDirectBitmap;
         private readonly DirectBitmap cyjanBitmap, magentaBitmap, yellowBitmap, blackBitmap;
-        public AllPicturesForm(Form1 mainForm)
+        public AllPicturesForm(CMYKForm mainForm)
         {
             InitializeComponent();
             this.mainForm = mainForm;

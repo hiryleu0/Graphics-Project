@@ -2,7 +2,7 @@
 
 namespace Projekt3
 {
-    partial class Form1
+    partial class CMYKForm
     {
         /// <summary>
         /// Required designer variable.

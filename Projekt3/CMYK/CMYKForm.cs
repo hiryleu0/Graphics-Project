@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Projekt3
 {
-    public partial class Form1 : Form
+    public partial class CMYKForm : Form
     {
         public Curve cyjanCurve;
         public Curve magentaCurve;
@@ -30,9 +30,11 @@ namespace Projekt3
         public DirectBitmap mainBitmap = null;
         public DirectBitmap plotBitmap = null;
 
-        public Form1()
+        private MainForm mainForm;
+        public CMYKForm(MainForm mainForm)
         {
             InitializeComponent();
+            this.mainForm = mainForm;
 
             plotBitmap = new DirectBitmap(plotPictureBox.Width, plotPictureBox.Height);
             plotPictureBox.Image = plotBitmap.Bitmap;
