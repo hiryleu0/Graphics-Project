@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Projekt3.HSV;
 
 namespace Projekt3
 {
@@ -16,7 +17,7 @@ namespace Projekt3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Projekt3.HSV.HSVForm());
+            Application.Run(new MainForm());
         }
     }
 }
