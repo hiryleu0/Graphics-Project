@@ -626,15 +626,15 @@ namespace Projekt3.HSV
         private Label label6;
         private Label label5;
         private Label label4;
-        private NumericUpDown gammaNumericUpDown;
-        private NumericUpDown whiteYNumericUpDown;
-        private NumericUpDown whiteXNumericUpDown;
-        private NumericUpDown blueYNumericUpDown;
-        private NumericUpDown blueXNumericUpDown;
-        private NumericUpDown greenYNumericUpDown;
-        private NumericUpDown greenXNumericUpDown;
-        private NumericUpDown redYNumericUpDown;
-        private NumericUpDown redXNumericUpDown;
+        public NumericUpDown gammaNumericUpDown;
+        public NumericUpDown whiteYNumericUpDown;
+        public NumericUpDown whiteXNumericUpDown;
+        public NumericUpDown blueYNumericUpDown;
+        public NumericUpDown blueXNumericUpDown;
+        public NumericUpDown greenYNumericUpDown;
+        public NumericUpDown greenXNumericUpDown;
+        public NumericUpDown redYNumericUpDown;
+        public NumericUpDown redXNumericUpDown;
         private Button cameraButton;
     }
 }
