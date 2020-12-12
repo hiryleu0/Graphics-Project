@@ -85,6 +85,15 @@
     <Compile Include="HSV\CameraForm.Designer.cs">
       <DependentUpon>CameraForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="HSV\ColorProfiles\ColorProfile.cs" />
+    <Compile Include="HSV\ColorProfiles\IColorProfile.cs" />
+    <Compile Include="HSV\ColorProfiles\AdobeRGB.cs" />
+    <Compile Include="HSV\ColorProfiles\AppleRGB.cs" />
+    <Compile Include="HSV\ColorProfiles\CIERGB.cs" />
+    <Compile Include="HSV\ColorProfiles\PAL_SECAM.cs" />
+    <Compile Include="HSV\ColorProfiles\MyColorProfile.cs" />
+    <Compile Include="HSV\ColorProfiles\WideGamut.cs" />
+    <Compile Include="HSV\ColorProfiles\sRGB.cs" />
     <Compile Include="HSV\HSVFilter.cs" />
     <Compile Include="HSV\HSVForm.cs">
       <SubType>Form</SubType>
@@ -93,6 +102,20 @@
       <DependentUpon>HSVForm.cs</DependentUpon>
     </Compile>
     <Compile Include="HSV\IFilter.cs" />
+    <Compile Include="HSV\Iluminants\F11.cs" />
+    <Compile Include="HSV\Iluminants\MyIluminant.cs" />
+    <Compile Include="HSV\Iluminants\F7.cs" />
+    <Compile Include="HSV\Iluminants\F2.cs" />
+    <Compile Include="HSV\Iluminants\E.cs" />
+    <Compile Include="HSV\Iluminants\_9300K.cs" />
+    <Compile Include="HSV\Iluminants\D75.cs" />
+    <Compile Include="HSV\Iluminants\D65.cs" />
+    <Compile Include="HSV\Iluminants\D55.cs" />
+    <Compile Include="HSV\Iluminants\D50.cs" />
+    <Compile Include="HSV\Iluminants\B.cs" />
+    <Compile Include="HSV\Iluminants\A.cs" />
+    <Compile Include="HSV\Iluminants\Iluminant.cs" />
+    <Compile Include="HSV\Iluminants\IIluminant.cs" />
     <Compile Include="HSV\LabFilter.cs" />
     <Compile Include="HSV\YCbCrFilter.cs" />
     <Compile Include="MainForm.cs">

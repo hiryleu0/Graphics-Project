@@ -91,6 +91,12 @@ namespace Projekt3.HSV
             camera.Join();
             Close();
         }
+
+        private void CameraForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            isCameraRunning = -1;
+            camera.Join();
+        }
     }
 
 }

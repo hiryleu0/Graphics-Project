@@ -38,6 +38,7 @@ namespace Projekt3.HSV
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cameraButton = new System.Windows.Forms.Button();
             this.filterComboBox = new System.Windows.Forms.ComboBox();
             this.seprateChannelsButton = new System.Windows.Forms.Button();
             this.savePropertiesButton = new System.Windows.Forms.Button();
@@ -45,15 +46,15 @@ namespace Projekt3.HSV
             this.loadImageButton = new System.Windows.Forms.Button();
             this.grayScaleButton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown9 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown8 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.gammaNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.whiteYNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.whiteXNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.blueYNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.blueXNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.greenYNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.greenXNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.redYNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.redXNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -68,22 +69,21 @@ namespace Projekt3.HSV
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.mainPictureBox = new System.Windows.Forms.PictureBox();
-            this.cameraButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gammaNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.whiteYNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.whiteXNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blueYNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blueXNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.greenYNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.greenXNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.redYNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.redXNumericUpDown)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -184,6 +184,17 @@ namespace Projekt3.HSV
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Action";
             // 
+            // cameraButton
+            // 
+            this.cameraButton.Location = new System.Drawing.Point(7, 301);
+            this.cameraButton.Margin = new System.Windows.Forms.Padding(10);
+            this.cameraButton.Name = "cameraButton";
+            this.cameraButton.Size = new System.Drawing.Size(123, 23);
+            this.cameraButton.TabIndex = 6;
+            this.cameraButton.Text = "From Camera";
+            this.cameraButton.UseVisualStyleBackColor = true;
+            this.cameraButton.Click += new System.EventHandler(this.cameraButton_Click);
+            // 
             // filterComboBox
             // 
             this.filterComboBox.FormattingEnabled = true;
@@ -196,7 +207,7 @@ namespace Projekt3.HSV
             // seprateChannelsButton
             // 
             this.seprateChannelsButton.Location = new System.Drawing.Point(6, 135);
-            this.seprateChannelsButton.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.seprateChannelsButton.Margin = new System.Windows.Forms.Padding(10);
             this.seprateChannelsButton.Name = "seprateChannelsButton";
             this.seprateChannelsButton.Size = new System.Drawing.Size(123, 23);
             this.seprateChannelsButton.TabIndex = 4;
@@ -208,7 +219,7 @@ namespace Projekt3.HSV
             // 
             this.savePropertiesButton.Enabled = false;
             this.savePropertiesButton.Location = new System.Drawing.Point(6, 106);
-            this.savePropertiesButton.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.savePropertiesButton.Margin = new System.Windows.Forms.Padding(10);
             this.savePropertiesButton.Name = "savePropertiesButton";
             this.savePropertiesButton.Size = new System.Drawing.Size(123, 23);
             this.savePropertiesButton.TabIndex = 3;
@@ -218,7 +229,7 @@ namespace Projekt3.HSV
             // saveOutputButton
             // 
             this.saveOutputButton.Location = new System.Drawing.Point(6, 77);
-            this.saveOutputButton.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.saveOutputButton.Margin = new System.Windows.Forms.Padding(10);
             this.saveOutputButton.Name = "saveOutputButton";
             this.saveOutputButton.Size = new System.Drawing.Size(123, 23);
             this.saveOutputButton.TabIndex = 2;
@@ -229,7 +240,7 @@ namespace Projekt3.HSV
             // loadImageButton
             // 
             this.loadImageButton.Location = new System.Drawing.Point(6, 48);
-            this.loadImageButton.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.loadImageButton.Margin = new System.Windows.Forms.Padding(10);
             this.loadImageButton.Name = "loadImageButton";
             this.loadImageButton.Size = new System.Drawing.Size(123, 23);
             this.loadImageButton.TabIndex = 1;
@@ -240,7 +251,7 @@ namespace Projekt3.HSV
             // grayScaleButton
             // 
             this.grayScaleButton.Location = new System.Drawing.Point(6, 19);
-            this.grayScaleButton.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.grayScaleButton.Margin = new System.Windows.Forms.Padding(10);
             this.grayScaleButton.Name = "grayScaleButton";
             this.grayScaleButton.Size = new System.Drawing.Size(123, 23);
             this.grayScaleButton.TabIndex = 0;
@@ -250,15 +261,15 @@ namespace Projekt3.HSV
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.numericUpDown9);
-            this.groupBox2.Controls.Add(this.numericUpDown8);
-            this.groupBox2.Controls.Add(this.numericUpDown7);
-            this.groupBox2.Controls.Add(this.numericUpDown6);
-            this.groupBox2.Controls.Add(this.numericUpDown5);
-            this.groupBox2.Controls.Add(this.numericUpDown4);
-            this.groupBox2.Controls.Add(this.numericUpDown3);
-            this.groupBox2.Controls.Add(this.numericUpDown2);
-            this.groupBox2.Controls.Add(this.numericUpDown1);
+            this.groupBox2.Controls.Add(this.gammaNumericUpDown);
+            this.groupBox2.Controls.Add(this.whiteYNumericUpDown);
+            this.groupBox2.Controls.Add(this.whiteXNumericUpDown);
+            this.groupBox2.Controls.Add(this.blueYNumericUpDown);
+            this.groupBox2.Controls.Add(this.blueXNumericUpDown);
+            this.groupBox2.Controls.Add(this.greenYNumericUpDown);
+            this.groupBox2.Controls.Add(this.greenXNumericUpDown);
+            this.groupBox2.Controls.Add(this.redYNumericUpDown);
+            this.groupBox2.Controls.Add(this.redXNumericUpDown);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label11);
@@ -280,124 +291,134 @@ namespace Projekt3.HSV
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Properties";
             // 
-            // numericUpDown9
+            // gammaNumericUpDown
             // 
-            this.numericUpDown9.Location = new System.Drawing.Point(239, 281);
-            this.numericUpDown9.Name = "numericUpDown9";
-            this.numericUpDown9.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown9.TabIndex = 26;
+            this.gammaNumericUpDown.DecimalPlaces = 3;
+            this.gammaNumericUpDown.Enabled = false;
+            this.gammaNumericUpDown.Location = new System.Drawing.Point(239, 281);
+            this.gammaNumericUpDown.Name = "gammaNumericUpDown";
+            this.gammaNumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.gammaNumericUpDown.TabIndex = 26;
             // 
-            // numericUpDown8
+            // whiteYNumericUpDown
             // 
-            this.numericUpDown8.DecimalPlaces = 8;
-            this.numericUpDown8.Location = new System.Drawing.Point(239, 245);
-            this.numericUpDown8.Maximum = new decimal(new int[] {
-            0,
+            this.whiteYNumericUpDown.DecimalPlaces = 8;
+            this.whiteYNumericUpDown.Enabled = false;
+            this.whiteYNumericUpDown.Location = new System.Drawing.Point(239, 245);
+            this.whiteYNumericUpDown.Maximum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
-            this.numericUpDown8.Name = "numericUpDown8";
-            this.numericUpDown8.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown8.TabIndex = 25;
-            this.numericUpDown8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.whiteYNumericUpDown.Name = "whiteYNumericUpDown";
+            this.whiteYNumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.whiteYNumericUpDown.TabIndex = 25;
+            this.whiteYNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // numericUpDown7
+            // whiteXNumericUpDown
             // 
-            this.numericUpDown7.DecimalPlaces = 8;
-            this.numericUpDown7.Location = new System.Drawing.Point(113, 245);
-            this.numericUpDown7.Maximum = new decimal(new int[] {
-            0,
+            this.whiteXNumericUpDown.DecimalPlaces = 8;
+            this.whiteXNumericUpDown.Enabled = false;
+            this.whiteXNumericUpDown.Location = new System.Drawing.Point(113, 245);
+            this.whiteXNumericUpDown.Maximum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
-            this.numericUpDown7.Name = "numericUpDown7";
-            this.numericUpDown7.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown7.TabIndex = 24;
-            this.numericUpDown7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.whiteXNumericUpDown.Name = "whiteXNumericUpDown";
+            this.whiteXNumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.whiteXNumericUpDown.TabIndex = 24;
+            this.whiteXNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // numericUpDown6
+            // blueYNumericUpDown
             // 
-            this.numericUpDown6.DecimalPlaces = 8;
-            this.numericUpDown6.Location = new System.Drawing.Point(239, 210);
-            this.numericUpDown6.Maximum = new decimal(new int[] {
-            0,
+            this.blueYNumericUpDown.DecimalPlaces = 8;
+            this.blueYNumericUpDown.Enabled = false;
+            this.blueYNumericUpDown.Location = new System.Drawing.Point(239, 210);
+            this.blueYNumericUpDown.Maximum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
-            this.numericUpDown6.Name = "numericUpDown6";
-            this.numericUpDown6.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown6.TabIndex = 23;
-            this.numericUpDown6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.blueYNumericUpDown.Name = "blueYNumericUpDown";
+            this.blueYNumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.blueYNumericUpDown.TabIndex = 23;
+            this.blueYNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // numericUpDown5
+            // blueXNumericUpDown
             // 
-            this.numericUpDown5.DecimalPlaces = 8;
-            this.numericUpDown5.Location = new System.Drawing.Point(113, 210);
-            this.numericUpDown5.Maximum = new decimal(new int[] {
-            0,
+            this.blueXNumericUpDown.DecimalPlaces = 8;
+            this.blueXNumericUpDown.Enabled = false;
+            this.blueXNumericUpDown.Location = new System.Drawing.Point(113, 210);
+            this.blueXNumericUpDown.Maximum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown5.TabIndex = 22;
-            this.numericUpDown5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.blueXNumericUpDown.Name = "blueXNumericUpDown";
+            this.blueXNumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.blueXNumericUpDown.TabIndex = 22;
+            this.blueXNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // numericUpDown4
+            // greenYNumericUpDown
             // 
-            this.numericUpDown4.DecimalPlaces = 8;
-            this.numericUpDown4.Location = new System.Drawing.Point(239, 173);
-            this.numericUpDown4.Maximum = new decimal(new int[] {
-            0,
+            this.greenYNumericUpDown.DecimalPlaces = 8;
+            this.greenYNumericUpDown.Enabled = false;
+            this.greenYNumericUpDown.Location = new System.Drawing.Point(239, 173);
+            this.greenYNumericUpDown.Maximum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown4.TabIndex = 21;
-            this.numericUpDown4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.greenYNumericUpDown.Name = "greenYNumericUpDown";
+            this.greenYNumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.greenYNumericUpDown.TabIndex = 21;
+            this.greenYNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // numericUpDown3
+            // greenXNumericUpDown
             // 
-            this.numericUpDown3.DecimalPlaces = 8;
-            this.numericUpDown3.Location = new System.Drawing.Point(113, 173);
-            this.numericUpDown3.Maximum = new decimal(new int[] {
-            0,
+            this.greenXNumericUpDown.DecimalPlaces = 8;
+            this.greenXNumericUpDown.Enabled = false;
+            this.greenXNumericUpDown.Location = new System.Drawing.Point(113, 173);
+            this.greenXNumericUpDown.Maximum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown3.TabIndex = 20;
-            this.numericUpDown3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.greenXNumericUpDown.Name = "greenXNumericUpDown";
+            this.greenXNumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.greenXNumericUpDown.TabIndex = 20;
+            this.greenXNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // numericUpDown2
+            // redYNumericUpDown
             // 
-            this.numericUpDown2.DecimalPlaces = 8;
-            this.numericUpDown2.Location = new System.Drawing.Point(239, 140);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
-            0,
+            this.redYNumericUpDown.DecimalPlaces = 8;
+            this.redYNumericUpDown.Enabled = false;
+            this.redYNumericUpDown.Location = new System.Drawing.Point(239, 140);
+            this.redYNumericUpDown.Maximum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown2.TabIndex = 19;
-            this.numericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.redYNumericUpDown.Name = "redYNumericUpDown";
+            this.redYNumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.redYNumericUpDown.TabIndex = 19;
+            this.redYNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // numericUpDown1
+            // redXNumericUpDown
             // 
-            this.numericUpDown1.DecimalPlaces = 8;
-            this.numericUpDown1.Location = new System.Drawing.Point(113, 140);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            0,
+            this.redXNumericUpDown.DecimalPlaces = 8;
+            this.redXNumericUpDown.Enabled = false;
+            this.redXNumericUpDown.Location = new System.Drawing.Point(113, 140);
+            this.redXNumericUpDown.Maximum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 18;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.redXNumericUpDown.Name = "redXNumericUpDown";
+            this.redXNumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.redXNumericUpDown.TabIndex = 18;
+            this.redXNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label14
             // 
@@ -506,6 +527,7 @@ namespace Projekt3.HSV
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 7;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // comboBox1
             // 
@@ -514,6 +536,7 @@ namespace Projekt3.HSV
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 6;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // panel1
             // 
@@ -536,17 +559,6 @@ namespace Projekt3.HSV
             this.mainPictureBox.TabIndex = 0;
             this.mainPictureBox.TabStop = false;
             // 
-            // cameraButton
-            // 
-            this.cameraButton.Location = new System.Drawing.Point(7, 301);
-            this.cameraButton.Margin = new System.Windows.Forms.Padding(10);
-            this.cameraButton.Name = "cameraButton";
-            this.cameraButton.Size = new System.Drawing.Size(123, 23);
-            this.cameraButton.TabIndex = 6;
-            this.cameraButton.Text = "From Camera";
-            this.cameraButton.UseVisualStyleBackColor = true;
-            this.cameraButton.Click += new System.EventHandler(this.cameraButton_Click);
-            // 
             // HSVForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -567,15 +579,15 @@ namespace Projekt3.HSV
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gammaNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.whiteYNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.whiteXNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blueYNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blueXNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.greenYNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.greenXNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.redYNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.redXNumericUpDown)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainPictureBox)).EndInit();
@@ -614,15 +626,15 @@ namespace Projekt3.HSV
         private Label label6;
         private Label label5;
         private Label label4;
-        private NumericUpDown numericUpDown9;
-        private NumericUpDown numericUpDown8;
-        private NumericUpDown numericUpDown7;
-        private NumericUpDown numericUpDown6;
-        private NumericUpDown numericUpDown5;
-        private NumericUpDown numericUpDown4;
-        private NumericUpDown numericUpDown3;
-        private NumericUpDown numericUpDown2;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown gammaNumericUpDown;
+        private NumericUpDown whiteYNumericUpDown;
+        private NumericUpDown whiteXNumericUpDown;
+        private NumericUpDown blueYNumericUpDown;
+        private NumericUpDown blueXNumericUpDown;
+        private NumericUpDown greenYNumericUpDown;
+        private NumericUpDown greenXNumericUpDown;
+        private NumericUpDown redYNumericUpDown;
+        private NumericUpDown redXNumericUpDown;
         private Button cameraButton;
     }
 }

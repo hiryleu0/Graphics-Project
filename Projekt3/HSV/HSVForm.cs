@@ -5,12 +5,15 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using OpenCvSharp;
 using OpenCvSharp.Extensions;
+using Projekt3.HSV.ColorProfiles;
+using Projekt3.HSV.Iluminants;
 
 namespace Projekt3.HSV
 {
@@ -36,6 +39,7 @@ namespace Projekt3.HSV
                 label2.Text = value.Label2;
                 label3.Text = value.Label3;
                 groupBox2.Enabled = savePropertiesButton.Enabled = value.PropertiesEnabled;
+                comboBox2.Enabled = (comboBox1.SelectedItem as IColorProfile).IluminantEnabled;
                 _filter = value;
             }
         }
@@ -44,6 +48,37 @@ namespace Projekt3.HSV
             InitializeComponent();
 
             filterComboBox.Items.AddRange(new IFilter[] { new HSVFilter(), new YCbCrFilter(), new LabFilter(this) });
+
+
+            Type[] iluminantClasses = Assembly.GetExecutingAssembly().GetTypes()
+                          .Where(t => String.Equals(t.Namespace, "Projekt3.HSV.Iluminants", StringComparison.Ordinal))
+                          .ToArray();
+            foreach (Type type in iluminantClasses)
+            {
+                var types = new Type[] { };
+                var cons = type.GetConstructor(types);
+                if (cons != null)
+                {
+                    var obj = cons.Invoke(new object[] { });
+                    comboBox2.Items.Add(obj);
+                }
+            }
+            comboBox2.SelectedIndex = 0;
+
+            Type[] colorProfilesClasses = Assembly.GetExecutingAssembly().GetTypes()
+                          .Where(t => String.Equals(t.Namespace, "Projekt3.HSV.ColorProfiles", StringComparison.Ordinal))
+                          .ToArray();
+            foreach(Type type in colorProfilesClasses)
+            {
+                var types = new Type[] {  };
+                var cons = type.GetConstructor(types);
+                if (cons != null)
+                {
+                    var obj = cons.Invoke(new object[] { });
+                    comboBox1.Items.Add(obj);
+                }
+            }
+            comboBox1.SelectedIndex = 0;
         }
 
         private void filterComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -187,6 +222,48 @@ namespace Projekt3.HSV
         {
             cameraForm = new CameraForm(this); ;
             cameraForm.ShowDialog();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ColorProfile profile = comboBox1.SelectedItem as ColorProfile;
+            if (comboBox2.Enabled = profile.IluminantEnabled)
+            {
+                redXNumericUpDown.Enabled = redYNumericUpDown.Enabled = greenXNumericUpDown.Enabled = greenYNumericUpDown.Enabled
+                    = blueXNumericUpDown.Enabled = blueYNumericUpDown.Enabled = gammaNumericUpDown.Enabled = true;
+                whiteXNumericUpDown.Enabled = whiteYNumericUpDown.Enabled = (comboBox2.SelectedItem as Iluminant).WhiteEnabled;
+
+                return;
+            }
+
+            redXNumericUpDown.Enabled = redYNumericUpDown.Enabled = greenXNumericUpDown.Enabled = greenYNumericUpDown.Enabled
+                    = blueXNumericUpDown.Enabled = blueYNumericUpDown.Enabled = gammaNumericUpDown.Enabled = false;
+            whiteXNumericUpDown.Enabled = whiteYNumericUpDown.Enabled = false;
+
+            redXNumericUpDown.Value = (decimal)profile.XRed;
+            redYNumericUpDown.Value = (decimal)profile.YRed;
+            greenXNumericUpDown.Value = (decimal)profile.XGreen;
+            greenYNumericUpDown.Value = (decimal)profile.YGreen;
+            blueXNumericUpDown.Value = (decimal)profile.XBlue;
+            blueYNumericUpDown.Value = (decimal)profile.YBlue;
+            whiteXNumericUpDown.Value = (decimal)profile.XWhite;
+            whiteYNumericUpDown.Value = (decimal)profile.YWhite;
+            gammaNumericUpDown.Value = (decimal)profile.Gamma;
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Iluminant iluminant = comboBox2.SelectedItem as Iluminant;
+            if (iluminant.WhiteEnabled)
+            {
+               whiteXNumericUpDown.Enabled = whiteYNumericUpDown.Enabled = true;
+                return;
+            }
+
+            whiteXNumericUpDown.Enabled = whiteYNumericUpDown.Enabled = false;
+
+            whiteXNumericUpDown.Value = (decimal)iluminant.XWhite;
+            whiteYNumericUpDown.Value = (decimal)iluminant.YWhite;
         }
     }
 
