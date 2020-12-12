@@ -79,7 +79,8 @@ namespace Projekt3.HSV
         {
             isCameraRunning = 0;
             camera.Join();
-            form.mainPictureBox.Image = form.mainBitmap.Bitmap;
+            if(form.mainBitmap.Bitmap != null)
+                form.mainPictureBox.Image = form.mainBitmap.Bitmap;
             form.mainPictureBox.Refresh();
             Close();
         }
