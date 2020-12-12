@@ -28,7 +28,7 @@ namespace Projekt3.HSV
 
         public (Color, Color, Color) FilterColor(Color color)
         {
-            throw new NotImplementedException();
+            return (default, default, default);
         }
     }
 }
