@@ -32,6 +32,7 @@
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.CMYKButton = new System.Windows.Forms.Button();
             this.HSVButton = new System.Windows.Forms.Button();
+            this.bezierButton = new System.Windows.Forms.Button();
             this.groupBox.SuspendLayout();
             this.flowLayoutPanel.SuspendLayout();
             this.SuspendLayout();
@@ -51,6 +52,7 @@
             // 
             this.flowLayoutPanel.Controls.Add(this.CMYKButton);
             this.flowLayoutPanel.Controls.Add(this.HSVButton);
+            this.flowLayoutPanel.Controls.Add(this.bezierButton);
             this.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel.Location = new System.Drawing.Point(3, 16);
             this.flowLayoutPanel.Name = "flowLayoutPanel";
@@ -80,6 +82,17 @@
             this.HSVButton.UseVisualStyleBackColor = true;
             this.HSVButton.Click += new System.EventHandler(this.HSVButton_Click);
             // 
+            // bezierButton
+            // 
+            this.bezierButton.Location = new System.Drawing.Point(244, 30);
+            this.bezierButton.Margin = new System.Windows.Forms.Padding(10);
+            this.bezierButton.Name = "bezierButton";
+            this.bezierButton.Size = new System.Drawing.Size(87, 80);
+            this.bezierButton.TabIndex = 2;
+            this.bezierButton.Text = "Moving on Bezier\'s curve";
+            this.bezierButton.UseVisualStyleBackColor = true;
+            this.bezierButton.Click += new System.EventHandler(this.bezierButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -100,5 +113,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
         private System.Windows.Forms.Button CMYKButton;
         private System.Windows.Forms.Button HSVButton;
+        private System.Windows.Forms.Button bezierButton;
     }
 }

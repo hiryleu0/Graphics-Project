@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Projekt3.HSV;
+using Projekt3.BezierCurve;
 
 namespace Projekt3
 {
@@ -27,6 +28,11 @@ namespace Projekt3
         private void HSVButton_Click(object sender, EventArgs e)
         {
             new HSVForm().Show();
+        }
+
+        private void bezierButton_Click(object sender, EventArgs e)
+        {
+            new BezierCurveForm().Show();
         }
     }
 }

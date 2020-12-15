@@ -68,6 +68,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BezierCurve\BezierCurve.cs" />
+    <Compile Include="BezierCurve\BezierCurveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BezierCurve\BezierCurveForm.Designer.cs">
+      <DependentUpon>BezierCurveForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CMYK\AllPicturesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +138,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BezierCurve\BezierCurveForm.resx">
+      <DependentUpon>BezierCurveForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CMYK\AllPicturesForm.resx">
       <DependentUpon>AllPicturesForm.cs</DependentUpon>
     </EmbeddedResource>
