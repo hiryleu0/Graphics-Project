@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 using OpenCvSharp;
 using OpenCvSharp.Extensions;
 using Projekt3.HSV.ColorProfiles;
@@ -38,7 +39,7 @@ namespace Projekt3.HSV
                 label1.Text = value.Label1;
                 label2.Text = value.Label2;
                 label3.Text = value.Label3;
-                groupBox2.Enabled = savePropertiesButton.Enabled = value.PropertiesEnabled;
+                groupBox2.Enabled = savePropertiesButton.Enabled = loadPropertiesButton.Enabled = value.PropertiesEnabled;
                 comboBox2.Enabled = (comboBox1.SelectedItem as IColorProfile).IluminantEnabled;
                 _filter = value;
             }
@@ -264,6 +265,64 @@ namespace Projekt3.HSV
 
             whiteXNumericUpDown.Value = (decimal)iluminant.XWhite;
             whiteYNumericUpDown.Value = (decimal)iluminant.YWhite;
+        }
+
+        private void savePropertiesButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                decimal[] values = new decimal[9];
+                values[0] = redXNumericUpDown.Value;
+                values[1] = redYNumericUpDown.Value;
+                values[2] = greenXNumericUpDown.Value;
+                values[3] = greenYNumericUpDown.Value;
+                values[4] = blueXNumericUpDown.Value;
+                values[5] = blueYNumericUpDown.Value;
+                values[6] = whiteXNumericUpDown.Value;
+                values[7] = whiteYNumericUpDown.Value;
+                values[8] = gammaNumericUpDown.Value;
+                SaveFileDialog dialog = new SaveFileDialog();
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    XmlSerializer serializer = new XmlSerializer(typeof(decimal[]));
+                    TextWriter writer = new StreamWriter(dialog.FileName);
+                    serializer.Serialize(writer, values);
+                    writer.Close();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Error");
+            }
+        }
+
+        private void loadPropertiesButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog dialog = new OpenFileDialog();
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    XmlSerializer serializer = new XmlSerializer(typeof(Decimal[]));
+                    TextReader reader = new StreamReader(dialog.FileName);
+                    decimal[] values = (decimal[])serializer.Deserialize(reader);
+                    reader.Close();
+
+                    redXNumericUpDown.Value = values[0];
+                    redYNumericUpDown.Value = values[1];
+                    greenXNumericUpDown.Value = values[2];
+                    greenYNumericUpDown.Value = values[3];
+                    blueXNumericUpDown.Value = values[4];
+                    blueYNumericUpDown.Value = values[5];
+                    whiteXNumericUpDown.Value = values[6];
+                    whiteYNumericUpDown.Value = values[7];
+                    gammaNumericUpDown.Value = values[8];
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Error");
+            }
         }
     }
 

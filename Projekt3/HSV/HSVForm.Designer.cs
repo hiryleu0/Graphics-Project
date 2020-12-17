@@ -69,6 +69,7 @@ namespace Projekt3.HSV
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.mainPictureBox = new System.Windows.Forms.PictureBox();
+            this.loadPropertiesButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -105,7 +106,7 @@ namespace Projekt3.HSV
             this.tableLayoutPanel.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             this.tableLayoutPanel.RowCount = 3;
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -118,7 +119,7 @@ namespace Projekt3.HSV
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(4, 469);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(515, 373);
             this.pictureBox1.TabIndex = 1;
@@ -128,7 +129,7 @@ namespace Projekt3.HSV
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox2.Location = new System.Drawing.Point(527, 469);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(500, 373);
             this.pictureBox2.TabIndex = 2;
@@ -138,7 +139,7 @@ namespace Projekt3.HSV
             // 
             this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox3.Location = new System.Drawing.Point(1035, 469);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(501, 373);
             this.pictureBox3.TabIndex = 3;
@@ -176,6 +177,7 @@ namespace Projekt3.HSV
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.loadPropertiesButton);
             this.groupBox1.Controls.Add(this.cameraButton);
             this.groupBox1.Controls.Add(this.filterComboBox);
             this.groupBox1.Controls.Add(this.seprateChannelsButton);
@@ -185,9 +187,9 @@ namespace Projekt3.HSV
             this.groupBox1.Controls.Add(this.grayScaleButton);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(527, 4);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(500, 415);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
@@ -195,7 +197,7 @@ namespace Projekt3.HSV
             // 
             // cameraButton
             // 
-            this.cameraButton.Location = new System.Drawing.Point(8, 172);
+            this.cameraButton.Location = new System.Drawing.Point(8, 204);
             this.cameraButton.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.cameraButton.Name = "cameraButton";
             this.cameraButton.Size = new System.Drawing.Size(164, 28);
@@ -207,8 +209,8 @@ namespace Projekt3.HSV
             // filterComboBox
             // 
             this.filterComboBox.FormattingEnabled = true;
-            this.filterComboBox.Location = new System.Drawing.Point(9, 212);
-            this.filterComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.filterComboBox.Location = new System.Drawing.Point(8, 236);
+            this.filterComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.filterComboBox.Name = "filterComboBox";
             this.filterComboBox.Size = new System.Drawing.Size(160, 24);
             this.filterComboBox.TabIndex = 5;
@@ -235,6 +237,7 @@ namespace Projekt3.HSV
             this.savePropertiesButton.TabIndex = 3;
             this.savePropertiesButton.Text = "Save Properties";
             this.savePropertiesButton.UseVisualStyleBackColor = true;
+            this.savePropertiesButton.Click += new System.EventHandler(this.savePropertiesButton_Click);
             // 
             // saveOutputButton
             // 
@@ -295,9 +298,9 @@ namespace Projekt3.HSV
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Enabled = false;
             this.groupBox2.Location = new System.Drawing.Point(1035, 4);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(501, 415);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
@@ -308,7 +311,7 @@ namespace Projekt3.HSV
             this.gammaNumericUpDown.DecimalPlaces = 3;
             this.gammaNumericUpDown.Enabled = false;
             this.gammaNumericUpDown.Location = new System.Drawing.Point(319, 346);
-            this.gammaNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gammaNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.gammaNumericUpDown.Name = "gammaNumericUpDown";
             this.gammaNumericUpDown.Size = new System.Drawing.Size(160, 22);
             this.gammaNumericUpDown.TabIndex = 26;
@@ -318,7 +321,7 @@ namespace Projekt3.HSV
             this.whiteYNumericUpDown.DecimalPlaces = 8;
             this.whiteYNumericUpDown.Enabled = false;
             this.whiteYNumericUpDown.Location = new System.Drawing.Point(319, 302);
-            this.whiteYNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.whiteYNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.whiteYNumericUpDown.Maximum = new decimal(new int[] {
             1,
             0,
@@ -334,7 +337,7 @@ namespace Projekt3.HSV
             this.whiteXNumericUpDown.DecimalPlaces = 8;
             this.whiteXNumericUpDown.Enabled = false;
             this.whiteXNumericUpDown.Location = new System.Drawing.Point(151, 302);
-            this.whiteXNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.whiteXNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.whiteXNumericUpDown.Maximum = new decimal(new int[] {
             1,
             0,
@@ -350,7 +353,7 @@ namespace Projekt3.HSV
             this.blueYNumericUpDown.DecimalPlaces = 8;
             this.blueYNumericUpDown.Enabled = false;
             this.blueYNumericUpDown.Location = new System.Drawing.Point(319, 258);
-            this.blueYNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.blueYNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.blueYNumericUpDown.Maximum = new decimal(new int[] {
             1,
             0,
@@ -366,7 +369,7 @@ namespace Projekt3.HSV
             this.blueXNumericUpDown.DecimalPlaces = 8;
             this.blueXNumericUpDown.Enabled = false;
             this.blueXNumericUpDown.Location = new System.Drawing.Point(151, 258);
-            this.blueXNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.blueXNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.blueXNumericUpDown.Maximum = new decimal(new int[] {
             1,
             0,
@@ -382,7 +385,7 @@ namespace Projekt3.HSV
             this.greenYNumericUpDown.DecimalPlaces = 8;
             this.greenYNumericUpDown.Enabled = false;
             this.greenYNumericUpDown.Location = new System.Drawing.Point(319, 213);
-            this.greenYNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.greenYNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.greenYNumericUpDown.Maximum = new decimal(new int[] {
             1,
             0,
@@ -398,7 +401,7 @@ namespace Projekt3.HSV
             this.greenXNumericUpDown.DecimalPlaces = 8;
             this.greenXNumericUpDown.Enabled = false;
             this.greenXNumericUpDown.Location = new System.Drawing.Point(151, 213);
-            this.greenXNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.greenXNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.greenXNumericUpDown.Maximum = new decimal(new int[] {
             1,
             0,
@@ -414,7 +417,7 @@ namespace Projekt3.HSV
             this.redYNumericUpDown.DecimalPlaces = 8;
             this.redYNumericUpDown.Enabled = false;
             this.redYNumericUpDown.Location = new System.Drawing.Point(319, 172);
-            this.redYNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.redYNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.redYNumericUpDown.Maximum = new decimal(new int[] {
             1,
             0,
@@ -430,7 +433,7 @@ namespace Projekt3.HSV
             this.redXNumericUpDown.DecimalPlaces = 8;
             this.redXNumericUpDown.Enabled = false;
             this.redXNumericUpDown.Location = new System.Drawing.Point(151, 172);
-            this.redXNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.redXNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.redXNumericUpDown.Maximum = new decimal(new int[] {
             1,
             0,
@@ -535,7 +538,7 @@ namespace Projekt3.HSV
             // 
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(225, 69);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(160, 24);
             this.comboBox2.TabIndex = 7;
@@ -545,7 +548,7 @@ namespace Projekt3.HSV
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(225, 37);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(160, 24);
             this.comboBox1.TabIndex = 6;
@@ -559,7 +562,7 @@ namespace Projekt3.HSV
             this.panel1.Controls.Add(this.mainPictureBox);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(4, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(515, 415);
             this.panel1.TabIndex = 9;
@@ -567,12 +570,24 @@ namespace Projekt3.HSV
             // mainPictureBox
             // 
             this.mainPictureBox.Location = new System.Drawing.Point(4, 4);
-            this.mainPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mainPictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.mainPictureBox.Name = "mainPictureBox";
             this.mainPictureBox.Size = new System.Drawing.Size(100, 50);
             this.mainPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.mainPictureBox.TabIndex = 0;
             this.mainPictureBox.TabStop = false;
+            // 
+            // loadPropertiesButton
+            // 
+            this.loadPropertiesButton.Enabled = false;
+            this.loadPropertiesButton.Location = new System.Drawing.Point(8, 166);
+            this.loadPropertiesButton.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.loadPropertiesButton.Name = "loadPropertiesButton";
+            this.loadPropertiesButton.Size = new System.Drawing.Size(164, 28);
+            this.loadPropertiesButton.TabIndex = 7;
+            this.loadPropertiesButton.Text = "Load Properties";
+            this.loadPropertiesButton.UseVisualStyleBackColor = true;
+            this.loadPropertiesButton.Click += new System.EventHandler(this.loadPropertiesButton_Click);
             // 
             // HSVForm
             // 
@@ -581,7 +596,7 @@ namespace Projekt3.HSV
             this.ClientSize = new System.Drawing.Size(1540, 846);
             this.Controls.Add(this.tableLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1533, 819);
             this.Name = "HSVForm";
             this.Text = "HSVForm";
@@ -652,5 +667,6 @@ namespace Projekt3.HSV
         public NumericUpDown redYNumericUpDown;
         public NumericUpDown redXNumericUpDown;
         private Button cameraButton;
+        private Button loadPropertiesButton;
     }
 }
