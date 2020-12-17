@@ -250,6 +250,7 @@ namespace Projekt3.HSV
             whiteXNumericUpDown.Value = (decimal)profile.XWhite;
             whiteYNumericUpDown.Value = (decimal)profile.YWhite;
             gammaNumericUpDown.Value = (decimal)profile.Gamma;
+
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
